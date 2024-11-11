@@ -35,10 +35,10 @@ createBullBoard({
     serverAdapter,
 });
 
-serverAdapter.setBasePath('/bull-board');
-app.use('/bull-board', serverAdapter.getRouter() as RequestHandler);
+serverAdapter.setBasePath('/');
+app.use('/', serverAdapter.getRouter() as RequestHandler);
 
 const PORT: number = 80;
 app.listen(PORT, () => {
-    console.log(`BullBoard is running on http://localhost:${PORT}/bull-board`);
+    console.log(`BullBoard is running on http://localhost:${PORT}`);
 });
